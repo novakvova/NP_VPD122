@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Sockets;
 
 Console.InputEncoding= System.Text.Encoding.UTF8;
 Console.OutputEncoding= System.Text.Encoding.UTF8;
@@ -15,4 +16,30 @@ Console.Write("->_");
 IPAddress ip_select = ipHostInfo.AddressList[int.Parse(Console.ReadLine())];
 
 Console.WriteLine("Ви обрали наступний IP " + ip_select);
+
+Console.Write("Вкажіть порт на якому працює ваш сокет(1098)->_");
+int port = int.Parse(Console.ReadLine());
+
+IPEndPoint endPoint = new IPEndPoint(ip_select, port);
+Socket server = new Socket(ip_select.AddressFamily,
+        SocketType.Stream,
+        ProtocolType.Tcp);
+try
+{
+    server.Bind(endPoint);
+    server.Listen(1000);
+    while(true)
+    {
+        Console.WriteLine("Очікуємо підклюення клієнтів");
+        Socket client = server.Accept(); //метод визивається, якщо до нього підключаєтсья клієнт
+
+        Console.WriteLine("Client info {0}", client.RemoteEndPoint.ToString());
+        client.Shutdown(SocketShutdown.Both);
+        client.Close();
+    }
+}
+catch(Exception ex)
+{
+    Console.WriteLine("Проблема запуска сервака {0}", ex.Message);
+}
 
