@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 Console.InputEncoding= System.Text.Encoding.UTF8;
 Console.OutputEncoding= System.Text.Encoding.UTF8;
@@ -34,6 +35,15 @@ try
         Socket client = server.Accept(); //метод визивається, якщо до нього підключаєтсья клієнт
 
         Console.WriteLine("Client info {0}", client.RemoteEndPoint.ToString());
+
+        byte[] dataClient = new byte[1024];
+        //приняли дані від клєнта
+        client.Receive(dataClient);
+        Console.WriteLine("Client info: {0}", Encoding.UTF8.GetString(dataClient));
+        byte[] bytes= new byte[1024];
+        bytes = Encoding.UTF8.GetBytes("Сервер ваш запит приняв");
+        //відпрвили дані клєнту
+        client.Send(bytes);
         client.Shutdown(SocketShutdown.Both);
         client.Close();
     }
