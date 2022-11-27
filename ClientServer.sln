@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleServerChat", "ConsoleServerChat\ConsoleServerChat.csproj", "{53B305E4-F0D5-4940-9426-C10A817B3827}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfClientChat", "WpfClientChat\WpfClientChat.csproj", "{61C83DE2-DC83-42BF-8398-FA6C9901D78D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{53B305E4-F0D5-4940-9426-C10A817B3827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53B305E4-F0D5-4940-9426-C10A817B3827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53B305E4-F0D5-4940-9426-C10A817B3827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61C83DE2-DC83-42BF-8398-FA6C9901D78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C83DE2-DC83-42BF-8398-FA6C9901D78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C83DE2-DC83-42BF-8398-FA6C9901D78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C83DE2-DC83-42BF-8398-FA6C9901D78D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
