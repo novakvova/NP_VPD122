@@ -31,7 +31,7 @@ namespace ConsoleServerChat
                 lock(_lock) { list_clients.Add(count, client); }
                 Console.WriteLine("Нова подія в чаті :)");
                 Thread t = new Thread(handle_clients);
-                t.Start();
+                t.Start(count);
                 count++;
             }
         }

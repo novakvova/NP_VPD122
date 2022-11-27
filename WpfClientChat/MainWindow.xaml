@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClientChat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="362" Width="699" FontSize="16pt">
+        Title="MainWindow" Height="362" Width="699" FontSize="16pt" Closing="Window_Closing">
     <Grid>
         <Label Content="Повідомлення" HorizontalAlignment="Left" Margin="28,6,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txtText" Text="Привіт!" HorizontalAlignment="Left" Margin="28,44,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="387"/>

@@ -54,8 +54,8 @@ namespace WpfClientChat
                 client.Connect(ip,port);
                 lbInfo.Items.Add("Підключення до сервера "+ip.ToString()+":"+port);
                 ns=client.GetStream();
-                thread = new Thread();
-                thread.Start();
+                thread = new Thread(o=>RecieveData((TcpClient)o));
+                thread.Start(client);
 
                 _message.MessageType = TypeMessage.Login;
                 _message.Text="Приєднався до чату";
@@ -108,7 +108,23 @@ namespace WpfClientChat
                                     lbInfo.Items.Add(message.UserName+" -> "+message.Text);
                                     break;
                                 }
-                                
+                            case TypeMessage.Login:
+                                {
+                                    if(message.UserId != _message.UserId)
+                                    {
+                                        lbInfo.Items.Add(message.UserName + " -> " + message.Text);
+                                    }
+                                    break;
+                                }
+                            case TypeMessage.Logout:
+                                {
+                                    if (message.UserId != _message.UserId)
+                                    {
+                                        lbInfo.Items.Add(message.UserName + " -> " + message.Text);
+                                    }
+                                    break;
+                                }
+
                         }
                         lbInfo.Items.MoveCurrentToLast();
                         lbInfo.ScrollIntoView(lbInfo.Items.CurrentItem);
