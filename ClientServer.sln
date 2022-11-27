@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleServer", "ConsoleServer\ConsoleServer.csproj", "{32993F3B-D87A-4E80-B9D7-89A4B7C34EE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{E2E2A7CC-35E8-4693-9C6A-8B00320DFF2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{E2E2A7CC-35E8-4693-9C6A-8B00320DFF2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleServerChat", "ConsoleServerChat\ConsoleServerChat.csproj", "{53B305E4-F0D5-4940-9426-C10A817B3827}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E2E2A7CC-35E8-4693-9C6A-8B00320DFF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2E2A7CC-35E8-4693-9C6A-8B00320DFF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2E2A7CC-35E8-4693-9C6A-8B00320DFF2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B305E4-F0D5-4940-9426-C10A817B3827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B305E4-F0D5-4940-9426-C10A817B3827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B305E4-F0D5-4940-9426-C10A817B3827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B305E4-F0D5-4940-9426-C10A817B3827}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
