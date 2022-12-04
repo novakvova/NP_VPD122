@@ -18,7 +18,7 @@ namespace ConsoleHttpClient
             Console.Write("Ім'я: ");
             user.FirstName = "Катерина";//Console.ReadLine();
             Console.Write("Пошта: ");
-            user.Email = "kateryna1@gmail.com";//Console.ReadLine();
+            user.Email = "kateryna3@gmail.com";//Console.ReadLine();
             Console.Write("Телефон: ");
             user.Phone = "096 85 45 785";//Console.ReadLine();
             Console.Write("Пароль: ");
