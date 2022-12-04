@@ -28,6 +28,9 @@ namespace ShowUsersHttp
                     //byte[] data = client.DownloadData(user.Image);
                     using (Stream stream = client.OpenRead(url))
                     {
+                        //pictureBox1.Image = Image.FromStream((Stream)stream);
+                        //break;
+
                         lvUsers.LargeImageList.Images.Add(id,Image.FromStream(stream));
                         ListViewItem item = new ListViewItem();
                         item.Text = user.FirstName + " " + user.SecondName;
@@ -35,6 +38,7 @@ namespace ShowUsersHttp
                         item.ImageKey = id;
                         
                         lvUsers.Items.Add(item);
+                        
                     }
                 }
             }
