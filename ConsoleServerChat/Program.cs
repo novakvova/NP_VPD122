@@ -44,7 +44,7 @@ namespace ConsoleServerChat
             {
                 NetworkStream stream = client.GetStream();
                 Console.WriteLine("Підключився клієнт {0}", client.Client.RemoteEndPoint);
-                byte[] buffer = new byte[4096];
+                byte[] buffer = new byte[16054400];
                 int byte_count = stream.Read(buffer, 0, buffer.Length);
                 if (byte_count == 0) break;
                 string data = Encoding.UTF8.GetString(buffer);
@@ -52,6 +52,7 @@ namespace ConsoleServerChat
                 Console.WriteLine(data);
             }
             lock(_lock) { list_clients.Remove(id); }
+
             client.Client.Shutdown(SocketShutdown.Both);
             client.Close();
         }

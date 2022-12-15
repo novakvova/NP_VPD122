@@ -20,16 +20,19 @@ namespace WpfClientChat
         public string UserId { get; set; }
         public string UserName { get; set; }
         public string Text { get; set; }
+        public string Images { get; set; }
         public byte[] Serialize()
         {
             using (var m = new MemoryStream())
             {
                 using (BinaryWriter writer = new BinaryWriter(m))
                 {
-                    writer.Write((int)MessageType);
+                    int int_value = (int)MessageType;
+                    writer.Write(int_value);
                     writer.Write(UserId);
                     writer.Write(UserName);
                     writer.Write(Text);
+                    writer.Write(Images);
                 }
                 return m.ToArray();
             }
@@ -45,6 +48,7 @@ namespace WpfClientChat
                     message.UserId = reader.ReadString();
                     message.UserName = reader.ReadString();
                     message.Text = reader.ReadString();
+                    message.Images = reader.ReadString();
                 }
             }
             return message;

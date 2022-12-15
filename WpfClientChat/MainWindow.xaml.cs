@@ -59,6 +59,7 @@ namespace WpfClientChat
 
                 _message.MessageType = TypeMessage.Login;
                 _message.Text="Приєднався до чату";
+                _message.Images = "iVBORw0KGgoAAAANSUhEUgAAAQ";
                 byte[] bytes = _message.Serialize();
                 ns.Write(bytes);
             }
@@ -91,7 +92,7 @@ namespace WpfClientChat
         private void RecieveData(TcpClient client)
         {
             NetworkStream ns = client.GetStream();
-            var receivedBytes = new byte[4128];
+            var receivedBytes = new byte[16054400];
             int byte_count;
             string data = "";
             while ((byte_count = ns.Read(receivedBytes, 0, receivedBytes.Length)) > 0)
@@ -101,16 +102,16 @@ namespace WpfClientChat
                     try
                     {
                         ChatMessage message = ChatMessage.Desserialize(receivedBytes);
-                        switch(message.MessageType)
+                        switch (message.MessageType)
                         {
                             case TypeMessage.Message:
                                 {
-                                    lbInfo.Items.Add(message.UserName+" -> "+message.Text);
+                                    lbInfo.Items.Add(message.UserName + " -> " + message.Text);
                                     break;
                                 }
                             case TypeMessage.Login:
                                 {
-                                    if(message.UserId != _message.UserId)
+                                    if (message.UserId != _message.UserId)
                                     {
                                         lbInfo.Items.Add(message.UserName + " -> " + message.Text);
                                     }
